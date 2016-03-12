@@ -125,13 +125,12 @@ class BudgetViewController: UIViewController {
     /* Called each time the tab is loaded */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        savingsBar.transform = CGAffineTransformScale(savingsBar.transform, 1, 12)
-        
     }
     /* Called each time the tab is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        savingsBar.transform = CGAffineTransformScale(savingsBar.transform, 1, 12)
         
         
     }
