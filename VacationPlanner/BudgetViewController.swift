@@ -13,6 +13,8 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var savingsBar: UIProgressView!
     @IBOutlet var entryCollection: [UITextField]!
     @IBOutlet weak var savingsRatio: UITextView!
+    var totalToSave = 0.0;
+    var globalSavings = SavingsModel();
     
     /* ************** */
     /* Food Variables */
@@ -59,7 +61,6 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var miscItemLst: UITextView!
     var miscLstCosts: [Double] = [];
     var miscLstItems: [String] = [];
-    
 
     /* ********** */
     /* Food Logic */
@@ -82,6 +83,9 @@ class BudgetViewController: UIViewController {
                 displayLists(foodLstItems, costLst: foodLstCosts, labelToUpdate: foodItemLst);
                 calculateTotal(foodAmountTotal, costLst: foodLstCosts);
                 clearEntries(foodCostEntry, e2 : foodItemEntry);
+                // Update the denom of the ratio
+                updateRatio();
+                
             } else{
                 // Error message and title
                 let errorMsg = "The Item input is empty";
@@ -119,6 +123,8 @@ class BudgetViewController: UIViewController {
                 displayLists(transLstItems, costLst: transLstCosts, labelToUpdate: transItemLst);
                 calculateTotal(transAmountTotal, costLst: transLstCosts);
                 clearEntries(transCostEntry, e2 : transItemEntry);
+                // Update the denom of the ratio
+                updateRatio();
             } else{
                 // Error message and title
                 let errorMsg = "The Item input is empty";
@@ -154,6 +160,8 @@ class BudgetViewController: UIViewController {
                 displayLists(accomLstItems, costLst: accomLstCosts, labelToUpdate: accomItemLst);
                 calculateTotal(accomAmountTotal, costLst: accomLstCosts);
                 clearEntries(accomCostEntry, e2 : accomItemEntry);
+                // Update the denom of the ratio
+                updateRatio();
             } else{
                 // Error message and title
                 let errorMsg = "The Item input is empty";
@@ -189,6 +197,8 @@ class BudgetViewController: UIViewController {
                 displayLists(entLstItems, costLst: entLstCosts, labelToUpdate: entItemLst);
                 calculateTotal(entAmountTotal, costLst: entLstCosts);
                 clearEntries(entCostEntry, e2 : entItemEntry);
+                // Update the denom of the ratio
+                updateRatio();
             } else{
                 // Error message and title
                 let errorMsg = "The Item input is empty";
@@ -223,6 +233,8 @@ class BudgetViewController: UIViewController {
                 displayLists(miscLstItems, costLst: miscLstCosts, labelToUpdate: miscItemLst);
                 calculateTotal(miscAmountTotal, costLst: miscLstCosts);
                 clearEntries(miscCostEntry, e2 : miscItemEntry);
+                // Update the denom of the ratio
+                updateRatio();
             } else{
                 // Error message and title
                 let errorMsg = "The Item input is empty";
@@ -252,7 +264,6 @@ class BudgetViewController: UIViewController {
         presentViewController(alertController, animated: true, completion: nil);
     }
     func displayLists(itemLst : [String], costLst : [Double], labelToUpdate : UITextView){
-        //listLabel.adjustsFontSizeToFitWidth = false;
         var toDisplay = "";
         var temp = "";
         let lstLen = itemLst.count;
@@ -277,6 +288,26 @@ class BudgetViewController: UIViewController {
         }
         totalAmountLabel.text = String(total);
     }
+    func updateRatio(){
+        var totalLst : [[Double]] = [];
+        totalLst.append(foodLstCosts);
+        totalLst.append(transLstCosts);
+        totalLst.append(accomLstCosts);
+        totalLst.append(entLstCosts);
+        totalLst.append(miscLstCosts);
+        var sum = 0.0;
+        for l in totalLst{
+            for n in l{
+                sum+=n;
+            }
+        }
+        totalToSave = sum;
+        let temp = self.globalSavings.getSavings();
+        
+        // Set the Savings Ratio
+        savingsRatio.text = "\(temp) / \(totalToSave)";
+        savingsBar.progress = Float(temp/totalToSave);
+    }
     
     /* ************************ */
     /* Final Required Functions */
@@ -294,12 +325,26 @@ class BudgetViewController: UIViewController {
     /* Called each time the tab is loaded */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // Set the Savings Ratio
+        let temp = self.globalSavings.getSavings();
+        savingsRatio.text = "\(temp) / \(totalToSave)";
+        savingsBar.progress = Float(temp/totalToSave);
     }
     /* Called each time the tab is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         savingsBar.transform = CGAffineTransformScale(savingsBar.transform, 1, 12)
+        
+        //Share data and set pointers
+        let barViewCtrls = self.tabBarController?.viewControllers;
+        let settingsVC = barViewCtrls![1] as! SettingsViewController;
+        self.globalSavings = settingsVC.settingSavingModel;
+        
+        // Set the Savings Ratio
+        let temp = self.globalSavings.getSavings();
+        savingsRatio.text = "\(temp) / \(totalToSave)";
+        savingsBar.progress = Float(temp/totalToSave);
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

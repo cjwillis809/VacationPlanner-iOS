@@ -14,6 +14,7 @@
 		4B4903411C8493E900661E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B49033F1C8493E900661E45 /* LaunchScreen.storyboard */; };
 		4B49034C1C8493E900661E45 /* VacationPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49034B1C8493E900661E45 /* VacationPlannerTests.swift */; };
 		4B4903571C8493EA00661E45 /* VacationPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4903561C8493EA00661E45 /* VacationPlannerUITests.swift */; };
+		B05BB5C21C951CE300033D77 /* SavingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BB5C11C951CE300033D77 /* SavingsModel.swift */; };
 		B0E03B9D1C8E7761009D656D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E03B9C1C8E7761009D656D /* SettingsViewController.swift */; };
 		B0E03B9F1C8E77A8009D656D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E03B9E1C8E77A8009D656D /* MapViewController.swift */; };
 		B0E03BA11C8E77CE009D656D /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E03BA01C8E77CE009D656D /* BudgetViewController.swift */; };
@@ -50,6 +51,7 @@
 		4B4903521C8493EA00661E45 /* VacationPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VacationPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4903561C8493EA00661E45 /* VacationPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationPlannerUITests.swift; sourceTree = "<group>"; };
 		4B4903581C8493EA00661E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B05BB5C11C951CE300033D77 /* SavingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingsModel.swift; sourceTree = "<group>"; };
 		B0E03B9C1C8E7761009D656D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0E03B9E1C8E77A8009D656D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B0E03BA01C8E77CE009D656D /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				4B4903361C8493E900661E45 /* AppDelegate.swift */,
 				4B4903381C8493E900661E45 /* ViewController.swift */,
 				4B49033A1C8493E900661E45 /* Main.storyboard */,
+				B05BB5C11C951CE300033D77 /* SavingsModel.swift */,
 				B0E03B9C1C8E7761009D656D /* SettingsViewController.swift */,
 				B0E03B9E1C8E77A8009D656D /* MapViewController.swift */,
 				B0E03BA01C8E77CE009D656D /* BudgetViewController.swift */,
@@ -271,6 +274,7 @@
 				B0E03B9D1C8E7761009D656D /* SettingsViewController.swift in Sources */,
 				4B4903391C8493E900661E45 /* ViewController.swift in Sources */,
 				B0E03BA11C8E77CE009D656D /* BudgetViewController.swift in Sources */,
+				B05BB5C21C951CE300033D77 /* SavingsModel.swift in Sources */,
 				4B4903371C8493E900661E45 /* AppDelegate.swift in Sources */,
 				B0E03B9F1C8E77A8009D656D /* MapViewController.swift in Sources */,
 			);
