@@ -449,9 +449,20 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-wg-bmr">
+                                                <rect key="frame" x="465" y="49" width="65" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" red="0.039215686270000001" green="0.32549019610000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="foodRemoveAction:" destination="a9o-9l-WoO" eventType="touchUpInside" id="xlG-79-XUi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Ntb-wg-bmr" firstAttribute="leading" secondItem="8dq-ej-gPa" secondAttribute="trailing" constant="20" id="1NN-14-aFq"/>
                                             <constraint firstItem="QCE-dB-myC" firstAttribute="leading" secondItem="8dq-ej-gPa" secondAttribute="leading" id="56M-CS-CHk"/>
                                             <constraint firstItem="QCE-dB-myC" firstAttribute="leading" secondItem="p3x-84-98d" secondAttribute="trailing" priority="250" constant="57" id="6Uu-jJ-Bf7"/>
                                             <constraint firstAttribute="bottom" secondItem="rNM-9i-Vxu" secondAttribute="bottom" id="7vp-Yy-YsK"/>
@@ -464,6 +475,7 @@
                                             <constraint firstItem="vlf-oF-oEO" firstAttribute="top" secondItem="LeB-Ji-R8t" secondAttribute="bottom" constant="45" id="OhV-rf-sSf"/>
                                             <constraint firstItem="QCE-dB-myC" firstAttribute="centerY" secondItem="p3x-84-98d" secondAttribute="centerY" id="Pwc-EI-A2z"/>
                                             <constraint firstItem="bw1-su-Qjk" firstAttribute="leading" secondItem="CaZ-fa-QbO" secondAttribute="leading" constant="10" id="QgK-WQ-PDm"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ntb-wg-bmr" secondAttribute="trailing" constant="10" id="TKm-EX-pYI"/>
                                             <constraint firstItem="rNM-9i-Vxu" firstAttribute="top" secondItem="QCE-dB-myC" secondAttribute="bottom" constant="3" id="UEx-uT-Xi5"/>
                                             <constraint firstItem="rNM-9i-Vxu" firstAttribute="leading" secondItem="CaZ-fa-QbO" secondAttribute="leading" id="UKM-Ao-Zta"/>
                                             <constraint firstItem="rNM-9i-Vxu" firstAttribute="leading" secondItem="CaZ-fa-QbO" secondAttribute="leading" id="VSZ-3K-KJc"/>
@@ -472,6 +484,7 @@
                                             <constraint firstAttribute="trailing" secondItem="LeB-Ji-R8t" secondAttribute="trailing" constant="8" id="Z5A-nd-TCL"/>
                                             <constraint firstItem="hNi-Qt-rpO" firstAttribute="leading" secondItem="p3x-84-98d" secondAttribute="leading" id="Zho-LC-gW2"/>
                                             <constraint firstItem="rNM-9i-Vxu" firstAttribute="top" secondItem="p3x-84-98d" secondAttribute="bottom" constant="8" symbolic="YES" id="aV2-OA-zNq"/>
+                                            <constraint firstItem="Ntb-wg-bmr" firstAttribute="top" secondItem="LeB-Ji-R8t" secondAttribute="bottom" constant="7" id="fU7-rF-BTS"/>
                                             <constraint firstItem="QCE-dB-myC" firstAttribute="top" secondItem="8dq-ej-gPa" secondAttribute="bottom" constant="8" symbolic="YES" id="fpc-SN-3Kd"/>
                                             <constraint firstItem="LeB-Ji-R8t" firstAttribute="leading" secondItem="CaZ-fa-QbO" secondAttribute="leading" constant="8" id="k7e-rV-VH8"/>
                                             <constraint firstItem="hNi-Qt-rpO" firstAttribute="leading" secondItem="CaZ-fa-QbO" secondAttribute="leading" constant="10" id="kLw-OP-0hh"/>
@@ -665,6 +678,16 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR8-wj-JAc">
+                                                <rect key="frame" x="465" y="49" width="65" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" red="0.04021105799" green="0.32408762250000001" blue="0.87430005659999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="transRemoveAction:" destination="a9o-9l-WoO" eventType="touchUpInside" id="pxR-Td-jEJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -672,6 +695,7 @@
                                             <constraint firstItem="ldq-eL-wsS" firstAttribute="top" secondItem="ZK8-Bu-GNI" secondAttribute="bottom" constant="7" id="32O-WA-DWg"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="top" secondItem="vFM-5s-gOX" secondAttribute="bottom" constant="3" id="43P-Du-cs4"/>
                                             <constraint firstAttribute="trailing" secondItem="mvP-ao-XKC" secondAttribute="trailing" constant="10" id="4mv-gn-iZZ"/>
+                                            <constraint firstItem="zR8-wj-JAc" firstAttribute="top" secondItem="ZK8-Bu-GNI" secondAttribute="bottom" constant="7" id="54y-UW-Fmx"/>
                                             <constraint firstAttribute="trailing" secondItem="FYP-zC-0RG" secondAttribute="trailing" id="5c2-Uo-IvV"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="leading" secondItem="d0V-eF-BVZ" secondAttribute="leading" id="6wn-bQ-fdz"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="top" secondItem="yi1-87-2uM" secondAttribute="bottom" constant="8" symbolic="YES" id="7DW-5j-LkY"/>
@@ -685,10 +709,12 @@
                                             <constraint firstAttribute="trailing" secondItem="ZK8-Bu-GNI" secondAttribute="trailing" constant="8" id="Luq-sB-aiz"/>
                                             <constraint firstItem="mvP-ao-XKC" firstAttribute="top" secondItem="ZK8-Bu-GNI" secondAttribute="bottom" constant="45" id="NVE-70-APo"/>
                                             <constraint firstItem="vFM-5s-gOX" firstAttribute="leading" secondItem="yi1-87-2uM" secondAttribute="trailing" priority="250" constant="261" id="Nf3-DP-zmk"/>
+                                            <constraint firstAttribute="trailing" secondItem="zR8-wj-JAc" secondAttribute="trailing" constant="10" id="PNG-Lg-vof"/>
                                             <constraint firstItem="jt4-Hn-XVW" firstAttribute="leading" secondItem="d0V-eF-BVZ" secondAttribute="leading" constant="10" id="SJi-no-T60"/>
                                             <constraint firstItem="ldq-eL-wsS" firstAttribute="centerY" secondItem="jt4-Hn-XVW" secondAttribute="centerY" id="WD6-bi-ZwY"/>
                                             <constraint firstItem="4kj-ta-Av1" firstAttribute="baseline" secondItem="EwG-eG-L14" secondAttribute="baseline" constant="2" id="e1I-2W-UvU"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="top" secondItem="vFM-5s-gOX" secondAttribute="bottom" constant="3" id="eoF-C3-eIa"/>
+                                            <constraint firstItem="zR8-wj-JAc" firstAttribute="leading" secondItem="ldq-eL-wsS" secondAttribute="trailing" constant="20" id="f22-sd-oFc"/>
                                             <constraint firstItem="EwG-eG-L14" firstAttribute="top" secondItem="d0V-eF-BVZ" secondAttribute="top" constant="8" id="fQL-fB-sOR"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="centerX" secondItem="ZK8-Bu-GNI" secondAttribute="centerX" id="goN-Xv-bbz"/>
                                             <constraint firstItem="FYP-zC-0RG" firstAttribute="leading" secondItem="d0V-eF-BVZ" secondAttribute="leading" id="iaW-iO-LKo"/>
@@ -883,10 +909,22 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXe-ti-5Ps">
+                                                <rect key="frame" x="468" y="49" width="59" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" red="0.04021105799" green="0.32408762250000001" blue="0.87430005659999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="accomRemoveAction:" destination="a9o-9l-WoO" eventType="touchUpInside" id="9KJ-yV-1ab"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="hXe-ti-5Ps" firstAttribute="top" secondItem="6H3-uB-k5x" secondAttribute="bottom" constant="7" id="1Je-96-Cby"/>
                                             <constraint firstItem="Hqd-Qd-Kg7" firstAttribute="top" secondItem="NhX-IH-rVT" secondAttribute="bottom" constant="3" id="24Y-1H-6yN"/>
+                                            <constraint firstItem="hXe-ti-5Ps" firstAttribute="leading" secondItem="lKG-8Q-djH" secondAttribute="trailing" constant="23" id="5p3-df-wkX"/>
                                             <constraint firstItem="hlz-S5-zgH" firstAttribute="leading" secondItem="NhX-IH-rVT" secondAttribute="trailing" priority="750" constant="20" id="6BF-va-n9k"/>
                                             <constraint firstAttribute="trailing" secondItem="Hqd-Qd-Kg7" secondAttribute="trailing" id="6Ff-oL-hOc"/>
                                             <constraint firstItem="DNJ-7Z-HX7" firstAttribute="leading" secondItem="nPH-vp-K9p" secondAttribute="leading" id="8MM-Xm-yF7"/>
@@ -905,6 +943,7 @@
                                             <constraint firstItem="Hqd-Qd-Kg7" firstAttribute="leading" secondItem="Y48-bd-Mgw" secondAttribute="leading" id="ZWz-xP-18Z"/>
                                             <constraint firstItem="Hqd-Qd-Kg7" firstAttribute="top" secondItem="nPH-vp-K9p" secondAttribute="bottom" constant="8" symbolic="YES" id="aug-jW-HOt"/>
                                             <constraint firstAttribute="trailing" secondItem="hlz-S5-zgH" secondAttribute="trailing" constant="10" id="bUy-gl-3PR"/>
+                                            <constraint firstAttribute="trailing" secondItem="hXe-ti-5Ps" secondAttribute="trailing" constant="13" id="coY-yE-TP2"/>
                                             <constraint firstItem="Hqd-Qd-Kg7" firstAttribute="leading" secondItem="Y48-bd-Mgw" secondAttribute="leading" id="ddw-oP-jH4"/>
                                             <constraint firstItem="6H3-uB-k5x" firstAttribute="leading" secondItem="Y48-bd-Mgw" secondAttribute="leading" constant="8" id="f9s-Q9-9MK"/>
                                             <constraint firstItem="Hqd-Qd-Kg7" firstAttribute="centerX" secondItem="6H3-uB-k5x" secondAttribute="centerX" id="fGM-3E-czp"/>
@@ -1101,6 +1140,16 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tu-PA-m6T">
+                                                <rect key="frame" x="468" y="49" width="59" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" red="0.04021105799" green="0.32408762250000001" blue="0.87430005659999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="entRemoveAction:" destination="a9o-9l-WoO" eventType="touchUpInside" id="N7O-ak-7bx"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1108,6 +1157,7 @@
                                             <constraint firstAttribute="height" constant="350" id="1fQ-46-2In"/>
                                             <constraint firstItem="Hrq-A8-2sa" firstAttribute="leading" secondItem="r2V-yA-WIW" secondAttribute="leading" id="2hl-Cv-agM"/>
                                             <constraint firstAttribute="bottom" secondItem="Hrq-A8-2sa" secondAttribute="bottom" id="32s-fj-zEw"/>
+                                            <constraint firstItem="7Tu-PA-m6T" firstAttribute="top" secondItem="Ydv-G8-hZH" secondAttribute="bottom" constant="7" id="510-ZX-x9z"/>
                                             <constraint firstItem="EM3-WY-uzV" firstAttribute="leading" secondItem="r2V-yA-WIW" secondAttribute="leading" constant="10" id="7Pi-bA-Guh"/>
                                             <constraint firstItem="61k-lb-lYd" firstAttribute="leading" secondItem="EM3-WY-uzV" secondAttribute="trailing" constant="10" id="7ey-CH-14L"/>
                                             <constraint firstItem="N3z-tv-RK6" firstAttribute="leading" secondItem="2tt-yd-uHj" secondAttribute="trailing" priority="250" constant="261" id="84S-KS-Gcf"/>
@@ -1124,6 +1174,7 @@
                                             <constraint firstItem="N3z-tv-RK6" firstAttribute="top" secondItem="6dy-8l-GZc" secondAttribute="bottom" constant="8" symbolic="YES" id="Hns-fW-OrT"/>
                                             <constraint firstItem="CVH-1G-ld1" firstAttribute="leading" secondItem="N3z-tv-RK6" secondAttribute="trailing" priority="750" constant="20" id="Ka5-ig-HB6"/>
                                             <constraint firstItem="Hrq-A8-2sa" firstAttribute="leading" secondItem="r2V-yA-WIW" secondAttribute="leading" id="Lt1-hy-UyS"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Tu-PA-m6T" secondAttribute="trailing" constant="13" id="Np6-K9-WXN"/>
                                             <constraint firstItem="9ER-uj-gf9" firstAttribute="leading" secondItem="2tt-yd-uHj" secondAttribute="leading" id="OWY-eA-nqc"/>
                                             <constraint firstItem="Hrq-A8-2sa" firstAttribute="top" secondItem="N3z-tv-RK6" secondAttribute="bottom" constant="3" id="Oc7-kM-Wxr"/>
                                             <constraint firstItem="N3z-tv-RK6" firstAttribute="leading" secondItem="6dy-8l-GZc" secondAttribute="leading" id="Zcz-LS-5jF"/>
@@ -1137,6 +1188,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Hrq-A8-2sa" secondAttribute="trailing" id="mQB-uR-9Ld"/>
                                             <constraint firstItem="9ER-uj-gf9" firstAttribute="top" secondItem="Ydv-G8-hZH" secondAttribute="bottom" constant="11" id="mpO-8g-drk"/>
                                             <constraint firstItem="6dy-8l-GZc" firstAttribute="top" secondItem="Ydv-G8-hZH" secondAttribute="bottom" constant="7" id="ola-RQ-nze"/>
+                                            <constraint firstItem="7Tu-PA-m6T" firstAttribute="leading" secondItem="6dy-8l-GZc" secondAttribute="trailing" constant="23" id="rn9-BH-Ys1"/>
                                             <constraint firstAttribute="trailing" secondItem="Chb-Dy-1Wj" secondAttribute="trailing" constant="10" id="s4V-Oa-Jwo"/>
                                             <constraint firstItem="CVH-1G-ld1" firstAttribute="top" secondItem="Ydv-G8-hZH" secondAttribute="bottom" constant="45" id="uKq-a9-2Qu"/>
                                             <constraint firstItem="6dy-8l-GZc" firstAttribute="trailing" secondItem="N3z-tv-RK6" secondAttribute="trailing" id="uOF-bI-t24"/>
@@ -1319,6 +1371,16 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mS-UW-YSb">
+                                                <rect key="frame" x="465" y="49" width="65" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" red="0.04021105799" green="0.32408762250000001" blue="0.87430005659999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="miscRemoveAction:" destination="a9o-9l-WoO" eventType="touchUpInside" id="eet-QD-hvW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1342,10 +1404,12 @@
                                             <constraint firstItem="7Xv-RT-YKB" firstAttribute="top" secondItem="hoM-6o-9tD" secondAttribute="bottom" constant="11" id="SXI-1d-zAe"/>
                                             <constraint firstItem="QOm-ga-15m" firstAttribute="centerY" secondItem="zIT-XH-5Bu" secondAttribute="centerY" id="SYl-su-yv8"/>
                                             <constraint firstItem="alc-z2-qOM" firstAttribute="top" secondItem="zIT-XH-5Bu" secondAttribute="bottom" constant="8" symbolic="YES" id="SiY-fM-jXN"/>
+                                            <constraint firstItem="4mS-UW-YSb" firstAttribute="top" secondItem="7Xv-RT-YKB" secondAttribute="bottom" constant="7" id="TDZ-O9-uxj"/>
                                             <constraint firstItem="alc-z2-qOM" firstAttribute="top" secondItem="QOm-ga-15m" secondAttribute="bottom" constant="3" id="U1J-9x-HgH"/>
                                             <constraint firstItem="shH-pa-2yR" firstAttribute="leading" secondItem="hoM-6o-9tD" secondAttribute="trailing" constant="10" id="XOv-r2-ni5"/>
                                             <constraint firstItem="PHY-rI-Hma" firstAttribute="leading" secondItem="shH-pa-2yR" secondAttribute="trailing" constant="2" id="Xmx-kH-hUs"/>
                                             <constraint firstAttribute="bottom" secondItem="alc-z2-qOM" secondAttribute="bottom" id="Y0J-WW-64Z"/>
+                                            <constraint firstItem="4mS-UW-YSb" firstAttribute="leading" secondItem="V9D-aE-C56" secondAttribute="trailing" constant="20" id="YhI-pk-8rE"/>
                                             <constraint firstAttribute="height" constant="350" id="bLb-BV-e0v"/>
                                             <constraint firstItem="V9D-aE-C56" firstAttribute="centerY" secondItem="SNG-fI-uuI" secondAttribute="centerY" id="bZh-IN-bsN"/>
                                             <constraint firstItem="hoM-6o-9tD" firstAttribute="top" secondItem="ZDX-VI-pr8" secondAttribute="top" constant="8" id="e0J-r0-y2J"/>
@@ -1359,6 +1423,7 @@
                                             <constraint firstItem="PHY-rI-Hma" firstAttribute="centerY" secondItem="shH-pa-2yR" secondAttribute="centerY" id="sIx-MC-AaQ"/>
                                             <constraint firstAttribute="trailing" secondItem="PHY-rI-Hma" secondAttribute="trailing" constant="10" id="se7-xZ-N1x"/>
                                             <constraint firstItem="PHY-rI-Hma" firstAttribute="top" secondItem="ZDX-VI-pr8" secondAttribute="top" id="ujO-Fz-lgC"/>
+                                            <constraint firstAttribute="trailing" secondItem="4mS-UW-YSb" secondAttribute="trailing" constant="10" id="w0i-Ek-cPD"/>
                                         </constraints>
                                     </view>
                                 </subviews>

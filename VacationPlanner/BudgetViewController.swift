@@ -80,10 +80,11 @@ class BudgetViewController: UIViewController {
                 // Add item and price to corresponding lists
                 foodLstCosts.append(roundCost);
                 foodLstItems.append(strItem);
+                
+                // Updating
                 displayLists(foodLstItems, costLst: foodLstCosts, labelToUpdate: foodItemLst);
                 calculateTotal(foodAmountTotal, costLst: foodLstCosts);
                 clearEntries(foodCostEntry, e2 : foodItemEntry);
-                // Update the denom of the ratio
                 updateRatio();
                 
             } else{
@@ -100,7 +101,21 @@ class BudgetViewController: UIViewController {
             showError(errorMsg, title: title)
         }
     }
-    
+    @IBAction func foodRemoveAction(sender: UIButton) {
+        // If no specific item entered, clear the entire section
+        if foodItemEntry.text!.isEmpty {
+            clearError("Food");
+        } else{
+            let ind = foodLstItems.indexOf(foodItemEntry.text!);
+            foodLstItems.removeAtIndex(ind!);
+            foodLstCosts.removeAtIndex(ind!);
+            // Updating
+            displayLists(foodLstItems, costLst: foodLstCosts, labelToUpdate: foodItemLst);
+            calculateTotal(foodAmountTotal, costLst: foodLstCosts);
+            clearEntries(foodCostEntry, e2 : foodItemEntry);
+            updateRatio();
+        }
+    }
     
     /* ******************** */
     /* Transportation Logic */
@@ -138,7 +153,21 @@ class BudgetViewController: UIViewController {
             showError(errorMsg, title: title)
         }
     }
-    
+    @IBAction func transRemoveAction(sender: UIButton) {
+        // If no specific item entered, clear the entire section
+        if transItemEntry.text!.isEmpty {
+            clearError("Trans");
+        } else{
+            let ind = transLstItems.indexOf(transItemEntry.text!);
+            transLstItems.removeAtIndex(ind!);
+            transLstCosts.removeAtIndex(ind!);
+            // Updating
+            displayLists(transLstItems, costLst: transLstCosts, labelToUpdate: transItemLst);
+            calculateTotal(transAmountTotal, costLst: transLstCosts);
+            clearEntries(transCostEntry, e2 : transItemEntry);
+            updateRatio();
+        }
+    }
     /* ******************** */
     /* Accommodations Logic */
     /* ******************** */
@@ -160,7 +189,6 @@ class BudgetViewController: UIViewController {
                 displayLists(accomLstItems, costLst: accomLstCosts, labelToUpdate: accomItemLst);
                 calculateTotal(accomAmountTotal, costLst: accomLstCosts);
                 clearEntries(accomCostEntry, e2 : accomItemEntry);
-                // Update the denom of the ratio
                 updateRatio();
             } else{
                 // Error message and title
@@ -173,6 +201,21 @@ class BudgetViewController: UIViewController {
             let errorMsg = "The Cost input is empty or invalid";
             let title = "Accommodation Cost Error!"
             showError(errorMsg, title: title)
+        }
+    }
+    @IBAction func accomRemoveAction(sender: UIButton) {
+        // If no specific item entered, clear the entire section
+        if accomItemEntry.text!.isEmpty {
+            clearError("Accom");
+        } else{
+            let ind = accomLstItems.indexOf(accomItemEntry.text!);
+            accomLstItems.removeAtIndex(ind!);
+            accomLstCosts.removeAtIndex(ind!);
+            // Updating
+            displayLists(accomLstItems, costLst: accomLstCosts, labelToUpdate: accomItemLst);
+            calculateTotal(accomAmountTotal, costLst: accomLstCosts);
+            clearEntries(accomCostEntry, e2 : accomItemEntry);
+            updateRatio();
         }
     }
     
@@ -212,6 +255,21 @@ class BudgetViewController: UIViewController {
             showError(errorMsg, title: title)
         }
     }
+    @IBAction func entRemoveAction(sender: UIButton) {
+        // If no specific item entered, clear the entire section
+        if entItemEntry.text!.isEmpty {
+            clearError("Ent");
+        } else{
+            let ind = entLstItems.indexOf(entItemEntry.text!);
+            entLstItems.removeAtIndex(ind!);
+            entLstCosts.removeAtIndex(ind!);
+            // Updating
+            displayLists(entLstItems, costLst: entLstCosts, labelToUpdate: entItemLst);
+            calculateTotal(entAmountTotal, costLst: entLstCosts);
+            clearEntries(entCostEntry, e2 : entItemEntry);
+            updateRatio();
+        }
+    }
     /* ********** */
     /* Misc Logic */
     /* ********** */
@@ -248,10 +306,26 @@ class BudgetViewController: UIViewController {
             showError(errorMsg, title: title)
         }
     }
+    @IBAction func miscRemoveAction(sender: UIButton) {
+        // If no specific item entered, clear the entire section
+        if miscItemEntry.text!.isEmpty {
+            clearError("Misc");
+        } else{
+            let ind = miscLstItems.indexOf(miscItemEntry.text!);
+            miscLstItems.removeAtIndex(ind!);
+            miscLstCosts.removeAtIndex(ind!);
+            // Updating
+            displayLists(miscLstItems, costLst: miscLstCosts, labelToUpdate: miscItemLst);
+            calculateTotal(miscAmountTotal, costLst: miscLstCosts);
+            clearEntries(miscCostEntry, e2 : miscItemEntry);
+            updateRatio();
+        }
+    }
     
     /* **************** */
     /* Helper Functions */
     /* **************** */
+    /* Shows a simple error message */
     func showError(errorMsg : String, title : String){
         // Alert Controller
         let alertController = UIAlertController(title: title, message: errorMsg, preferredStyle: .Alert);
@@ -263,6 +337,8 @@ class BudgetViewController: UIViewController {
         alertController.addAction(cancelAction);
         presentViewController(alertController, animated: true, completion: nil);
     }
+    
+    /* Updates the textViews */
     func displayLists(itemLst : [String], costLst : [Double], labelToUpdate : UITextView){
         var toDisplay = "";
         var temp = "";
@@ -276,11 +352,14 @@ class BudgetViewController: UIViewController {
         labelToUpdate.text = toDisplay;
         labelToUpdate.textColor = UIColor.orangeColor();
     }
+    
+    /* Clears the entries specified */
     func clearEntries(e1 : UITextField, e2 : UITextField){
         e1.text = "";
         e2.text = "";
     }
-    // Calculate the total cost
+    
+    /* Calculates the total */
     func calculateTotal(totalAmountLabel : UITextView, costLst : [Double]){
         var total = 0.0;
         for cost in costLst{
@@ -288,6 +367,8 @@ class BudgetViewController: UIViewController {
         }
         totalAmountLabel.text = String(total);
     }
+    
+    /* Updates the Progress Bar and the ratio */
     func updateRatio(){
         var totalLst : [[Double]] = [];
         totalLst.append(foodLstCosts);
@@ -307,6 +388,87 @@ class BudgetViewController: UIViewController {
         // Set the Savings Ratio
         savingsRatio.text = "\(temp) / \(totalToSave)";
         savingsBar.progress = Float(temp/totalToSave);
+    }
+    
+    /* Creates an error message with a forced action */
+    func clearError(sectionTitle: String){
+        // Alert Error
+        let errorMsg = "A specific Item to remove was not entered.\nClick 'Clear' to clear the entire section or cancel to go back.";
+        let title = "Remove Alert!";
+        
+        // Alert Controller
+        let alertController = UIAlertController(title: title, message: errorMsg, preferredStyle: .Alert);
+        
+        // Create the simple Cancel Action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil);
+        
+        // Create the Force Action with Handler
+        let forceAction = UIAlertAction(title: "Clear", style: .Default, handler: { (action: UIAlertAction!) -> Void in
+            // Clear the lists
+            if (sectionTitle == "Food"){
+                self.foodLstCosts = [];
+                self.foodLstItems = [];
+                // Updates
+                self.displayLists(self.foodLstItems, costLst: self.foodLstCosts, labelToUpdate: self.foodItemLst);
+                self.calculateTotal(self.foodAmountTotal, costLst: self.foodLstCosts);
+                self.clearEntries(self.foodCostEntry, e2 : self.foodItemEntry);
+                self.updateRatio();
+            }
+            
+            else if (sectionTitle == "Trans"){
+                self.transLstCosts = [];
+                self.transLstItems = [];
+                // Updates
+                self.displayLists(self.transLstItems, costLst: self.transLstCosts, labelToUpdate: self.transItemLst);
+                self.calculateTotal(self.transAmountTotal, costLst: self.transLstCosts);
+                self.clearEntries(self.transCostEntry, e2 : self.transItemEntry);
+                self.updateRatio();
+            }
+            
+            else if (sectionTitle == "Accom"){
+                self.accomLstCosts = [];
+                self.accomLstItems = [];
+                // Updates
+                self.displayLists(self.accomLstItems, costLst: self.accomLstCosts, labelToUpdate: self.accomItemLst);
+                self.calculateTotal(self.accomAmountTotal, costLst: self.accomLstCosts);
+                self.clearEntries(self.accomCostEntry, e2 : self.accomItemEntry);
+                self.updateRatio();
+            }
+            
+            else if (sectionTitle == "Ent"){
+                self.entLstCosts = [];
+                self.entLstItems = [];
+                // Updates
+                self.displayLists(self.entLstItems, costLst: self.entLstCosts, labelToUpdate: self.entItemLst);
+                self.calculateTotal(self.entAmountTotal, costLst: self.entLstCosts);
+                self.clearEntries(self.entCostEntry, e2 : self.entItemEntry);
+                self.updateRatio();
+            }
+            
+            else if (sectionTitle == "Misc"){
+                self.miscLstCosts = [];
+                self.miscLstItems = [];
+                // Updates
+                self.displayLists(self.miscLstItems, costLst: self.miscLstCosts, labelToUpdate: self.miscItemLst);
+                self.calculateTotal(self.miscAmountTotal, costLst: self.miscLstCosts);
+                self.clearEntries(self.miscCostEntry, e2 : self.miscItemEntry);
+                self.updateRatio();
+            }
+            
+            // Inner Alert Controller
+            let subAlertController = UIAlertController(title: "Cleared", message: "The section has been cleared", preferredStyle: .Alert);
+            // Create the Actions
+            let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil);
+            subAlertController.addAction(okAction);
+            self.presentViewController(subAlertController, animated: true, completion: nil);
+        });
+        
+        // Add Action to Alert Controller
+        alertController.addAction(cancelAction);
+        alertController.addAction(forceAction);
+        
+        // Present the View controller
+        presentViewController(alertController, animated: true, completion: nil);
     }
     
     /* ************************ */
