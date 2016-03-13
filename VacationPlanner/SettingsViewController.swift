@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ProjectsViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
 }
