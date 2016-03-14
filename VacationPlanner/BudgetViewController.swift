@@ -106,14 +106,17 @@ class BudgetViewController: UIViewController {
         if foodItemEntry.text!.isEmpty {
             clearError("Food");
         } else{
-            let ind = foodLstItems.indexOf(foodItemEntry.text!);
-            foodLstItems.removeAtIndex(ind!);
-            foodLstCosts.removeAtIndex(ind!);
-            // Updating
-            displayLists(foodLstItems, costLst: foodLstCosts, labelToUpdate: foodItemLst);
-            calculateTotal(foodAmountTotal, costLst: foodLstCosts);
-            clearEntries(foodCostEntry, e2 : foodItemEntry);
-            updateRatio();
+            if let ind = foodLstItems.indexOf(foodItemEntry.text!){
+                foodLstItems.removeAtIndex(ind);
+                foodLstCosts.removeAtIndex(ind);
+                // Updating
+                displayLists(foodLstItems, costLst: foodLstCosts, labelToUpdate: foodItemLst);
+                calculateTotal(foodAmountTotal, costLst: foodLstCosts);
+                clearEntries(foodCostEntry, e2 : foodItemEntry);
+                updateRatio();
+            }else{
+                showError("The item was not found. Search is case sensitive", title: "Remove error!")
+            }
         }
     }
     
@@ -158,14 +161,17 @@ class BudgetViewController: UIViewController {
         if transItemEntry.text!.isEmpty {
             clearError("Trans");
         } else{
-            let ind = transLstItems.indexOf(transItemEntry.text!);
-            transLstItems.removeAtIndex(ind!);
-            transLstCosts.removeAtIndex(ind!);
-            // Updating
-            displayLists(transLstItems, costLst: transLstCosts, labelToUpdate: transItemLst);
-            calculateTotal(transAmountTotal, costLst: transLstCosts);
-            clearEntries(transCostEntry, e2 : transItemEntry);
-            updateRatio();
+            if let ind = transLstItems.indexOf(transItemEntry.text!){
+                transLstItems.removeAtIndex(ind);
+                transLstCosts.removeAtIndex(ind);
+                // Updating
+                displayLists(transLstItems, costLst: transLstCosts, labelToUpdate: transItemLst);
+                calculateTotal(transAmountTotal, costLst: transLstCosts);
+                clearEntries(transCostEntry, e2 : transItemEntry);
+                updateRatio();
+            }else{
+                showError("The item was not found. Search is case sensitive", title: "Remove error!")
+            }
         }
     }
     /* ******************** */
@@ -208,14 +214,17 @@ class BudgetViewController: UIViewController {
         if accomItemEntry.text!.isEmpty {
             clearError("Accom");
         } else{
-            let ind = accomLstItems.indexOf(accomItemEntry.text!);
-            accomLstItems.removeAtIndex(ind!);
-            accomLstCosts.removeAtIndex(ind!);
-            // Updating
-            displayLists(accomLstItems, costLst: accomLstCosts, labelToUpdate: accomItemLst);
-            calculateTotal(accomAmountTotal, costLst: accomLstCosts);
-            clearEntries(accomCostEntry, e2 : accomItemEntry);
-            updateRatio();
+            if let ind = accomLstItems.indexOf(accomItemEntry.text!){
+                accomLstItems.removeAtIndex(ind);
+                accomLstCosts.removeAtIndex(ind);
+                // Updating
+                displayLists(accomLstItems, costLst: accomLstCosts, labelToUpdate: accomItemLst);
+                calculateTotal(accomAmountTotal, costLst: accomLstCosts);
+                clearEntries(accomCostEntry, e2 : accomItemEntry);
+                updateRatio();
+            }else{
+                showError("The item was not found. Search is case sensitive", title: "Remove error!")
+            }
         }
     }
     
@@ -260,14 +269,17 @@ class BudgetViewController: UIViewController {
         if entItemEntry.text!.isEmpty {
             clearError("Ent");
         } else{
-            let ind = entLstItems.indexOf(entItemEntry.text!);
-            entLstItems.removeAtIndex(ind!);
-            entLstCosts.removeAtIndex(ind!);
-            // Updating
-            displayLists(entLstItems, costLst: entLstCosts, labelToUpdate: entItemLst);
-            calculateTotal(entAmountTotal, costLst: entLstCosts);
-            clearEntries(entCostEntry, e2 : entItemEntry);
-            updateRatio();
+            if let ind = entLstItems.indexOf(entItemEntry.text!){
+                entLstItems.removeAtIndex(ind);
+                entLstCosts.removeAtIndex(ind);
+                // Updating
+                displayLists(entLstItems, costLst: entLstCosts, labelToUpdate: entItemLst);
+                calculateTotal(entAmountTotal, costLst: entLstCosts);
+                clearEntries(entCostEntry, e2 : entItemEntry);
+                updateRatio();
+            }else{
+                showError("The item was not found. Search is case sensitive", title: "Remove error!")
+            }
         }
     }
     /* ********** */
@@ -311,14 +323,17 @@ class BudgetViewController: UIViewController {
         if miscItemEntry.text!.isEmpty {
             clearError("Misc");
         } else{
-            let ind = miscLstItems.indexOf(miscItemEntry.text!);
-            miscLstItems.removeAtIndex(ind!);
-            miscLstCosts.removeAtIndex(ind!);
-            // Updating
-            displayLists(miscLstItems, costLst: miscLstCosts, labelToUpdate: miscItemLst);
-            calculateTotal(miscAmountTotal, costLst: miscLstCosts);
-            clearEntries(miscCostEntry, e2 : miscItemEntry);
-            updateRatio();
+            if let ind = miscLstItems.indexOf(miscItemEntry.text!){
+                miscLstItems.removeAtIndex(ind);
+                miscLstCosts.removeAtIndex(ind);
+                // Updating
+                displayLists(miscLstItems, costLst: miscLstCosts, labelToUpdate: miscItemLst);
+                calculateTotal(miscAmountTotal, costLst: miscLstCosts);
+                clearEntries(miscCostEntry, e2 : miscItemEntry);
+                updateRatio();
+            }else{
+                showError("The item was not found. Search is case sensitive", title: "Remove error!")
+            }
         }
     }
     
