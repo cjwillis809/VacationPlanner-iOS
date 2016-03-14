@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="igw-a0-Db1"/>
+                    <connections>
+                        <outlet property="mapView" destination="dZ8-KR-2D2" id="OT2-Bl-V7o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1u-zo-hQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
