@@ -13,8 +13,10 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var savingsBar: UIProgressView!
     @IBOutlet var entryCollection: [UITextField]!
     @IBOutlet weak var savingsRatio: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
     var totalToSave = 0.0;
     var globalSavings = SavingsModel();
+    var destinationName = ""
     
     /* ************** */
     /* Food Variables */
@@ -522,6 +524,9 @@ class BudgetViewController: UIViewController {
         let temp = self.globalSavings.getSavings();
         savingsRatio.text = "\(temp) / \(totalToSave)";
         savingsBar.progress = Float(temp/totalToSave);
+        
+        // Set title
+        titleLabel.text = "\(self.destinationName) Vacation Budget"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,6 +9,7 @@
 import UIKit
 
 class SavingsModel: NSObject {
+    var travelDestination = ""
     var currentSavings = 0.0;
     
     func getSavings() -> Double{
@@ -19,5 +20,11 @@ class SavingsModel: NSObject {
         let temp = Double(updateValue);
         let roundCost = Double(round(100*temp)/100)
         currentSavings = roundCost;
+    }
+    func getTravelDestionation() -> String {
+        return travelDestination
+    }
+    func setTravelDestionation(update: String) {
+        travelDestination = update
     }
 }
